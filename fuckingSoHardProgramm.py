@@ -15,4 +15,5 @@ else:
     if n == 1:
         print(12)
     elif noFullCubes == 0:
-        print()
+        oneSide = (side-1)**2 + (side-2)**2
+        print(oneSide)
