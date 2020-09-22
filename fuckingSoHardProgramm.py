@@ -20,3 +20,5 @@ else:
         print(12)
     elif noFullCubes == 0:
         print( (2 * ( (side - 2) + 1) + 3 * (side - 2)) + (8 * 3) + ( ( ( side - 1 ) ** 2) *  ( ( side - 1 ) ** 2 ) ) )
+    elif noFullCubes < 8:
+        pass
