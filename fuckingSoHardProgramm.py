@@ -85,11 +85,17 @@ else:
             print(24)
         else:
             while noFullCubes > 0:
-                c = math.floor(pow(noFullCubes, 1/3))
-                if c > 1:
-                    pass
+                c = math.floor(pow(noFullCubes, 1/3) + 0.0001)
+                if c > 1: #Can be error for fix
+                    width = math.floor(c/2)
+                    for i in range( width ):
+                        s = s - (2 * i)
+                        result += (2 * ( (s - 2) + 1) + 3 * (s - 2)) + (8 * 3) + ( ( ( s - 1 ) ** 2) *  ( ( s - 1 ) ** 2 ) )
+                        result += 12
+                noFullCubes -= c**3
                 else:
                     pass
+
     
     
 
