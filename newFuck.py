@@ -15,9 +15,21 @@ def createCube(n):
             else:
                 result == noUsed * 8 + 12
         elif side == 2:
-            pass
-        elif (width % 2) == 0:
+            if noUsed == 0:
+                result = 90
+            else:
+                while noUsed != 0:
+                    a = math.sqrt(noUsed)
+        elif (side % 2) == 0:
+            for i in range(width):
+                result += (( (s-(2*i)-1) + 1 )**2) + (( (s-(2*i)-1) + 1 )**2) + (2*((s-(2*i)-2)-1)+3*(s-(2*i)-2)) + (8*3)
             #result = (( (s-1) + 1 )**2) + (( (s-1) + 1 )**2) + (2*((s-2)-1)+3*(s-2)) + (8*3)
         else:
+            for i in range(math.floor(width)):
+                result += (( (s-(2*i)-1) + 1 )**2) + (( (s-(2*i)-1) + 1 )**2) + (2*((s-(2*i)-2)-1)+3*(s-(2*i)-2)) + (8*3)
             #result = (( (s-1) + 1 )**2) + (( (s-1) + 1 )**2) + (2*((s-2)-1)+3*(s-2)) + (8*3)
+            result += 12
+
+        if noUsed != 0:
+            pass
         return [result, noUsed]
